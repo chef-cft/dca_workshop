@@ -4,26 +4,27 @@
 #### maintainer: Karen Kwentus
 
 ## Goal for this workshop
-A contained, highly-repeatable method to give our customers hands-on experience and education about the benefits of using Chef Automate while removing the overhead and time commitment of a week-long POC.   Best-case scenario, this content preempts the need for a future POC at all.   This is designed to be a 'workshop in a box' where we can show up, impress, and leave....with the potential for an individual SE to support multiple of these a week.   
+A contained, highly-repeatable method to give our customers hands-on experience and education about the benefits of using Chef Automate while removing the overhead and time commitment of a week-long POC.   Best-case scenario, this content preempts the need for a future POC at all.   This is designed to be a 'workshop in a box' where we can show up, impress, and leave.  Timetable allows the potential for an individual SE to support multiple of these a week.   
 
 
 ## Audience
 Practioners or managers who influence the purchase of Chef Automate
 
 ## Logistics 
-* Workshop content without all the "optionals" is around 2-3 hours.   If you do the optional CM and remote-scan use cases then you will want to schedule closer to 4 hours.  The workshop is recommended to be held at a customer site with participants using their own laptops.   
-* Overhead projector and whiteboard in room are also recommended.    
+* Workshop content without all the "optionals" is around 2-3 hours.   If you do the optional CM and remote-scan use cases then you will want to schedule closer to 4 hours.  
+* The workshop is recommended to be held at a customer site.  Participants will only need laptops that can access the internet and the hosted Chef Automate instance   
+* Overhead projector required, whiteboard recommended.    
 * Consider providing breakfast or lunch based on timing of meeting.   
 * Any number of participants can work through this workshop, but with over 10 participants consider adding another SA to assist.
 
  
 ## Assumptions
 * Workflow is not addressed in this workshop
-* How-to-bootstrap is not addressed in this workshop as we are looking at it from a scenario where users can log into Automate and already see what is being managed/scanned.  If its important for your customer to see bootstrapping, you of course come with the nodes running but not yet bootstrapped and have your participants execute a knife command
+* How to bootstrap is not addressed in this workshop as we are looking at it from a scenario where users can log into Automate and already see what is being managed/scanned.  If its important for your customer to see bootstrapping, you of course come with the nodes running but not yet bootstrapped and have your participants execute a knife command
 
 
 ### Workshop in the cloud
-This workshop has been designed to be hosted in a cloud/BJC environment for the both Chef Automate and the managed nodes to be scanned/repaired.  There isn't anything required about BJC persay, you can use a blank AWS/Azure marketplace image as well, just more setup on your part.
+This workshop has been designed to be hosted in a cloud/BJC environment for the both Chef Automate and the managed nodes to be scanned/repaired.  There isn't anything required about BJC persay, you can use a blank AWS/Azure marketplace image as well.
 
 As technical professionals it is at your discretion if you want to run this full workshop against on-prem customer nodes at the client site.   
 
@@ -33,20 +34,20 @@ Running full Detect & Correct on customer on-prem nodes will add additional plan
 * Prep time.    **If you choose to do this full workshop against customer on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
 
 
-### On-site scan-only option
-If seeing a scan on their own nodes is really important to the customer, and-or it would preempt a future POC, then consider offering a remote-scan scan step as part of the workshop
+### On-site scan-only option (See Appendix III for more details)
+If seeing a scan on their own nodes is really important to the customer, and-or it would preempt a future POC, then consider offering a remote-scan scan as part of the workshop
 * Benefits of just an on-site scan:
     - Don't need to install the chef-client on the node
-    - Won't be doing any sort of modification of any customer node
+    - Won't be doing any sort of modification of any customer node, nothing will leave broken
 * Cons of doing the on-site scan:
-    - You are getting yourself back into the customer firewall-proxy access do-se-do.  Even with SSH or RDP access the Chef Automate instance is very likely still going to need to be able to go through the customer's firewal or proxy setups.   Give yourself enough time in advance to make sure your instance can connect to scan.
+    - You are getting yourself back into requesting and managing the customer firewall-proxy access.  Customer nodes will have to allow SSH or RDP through their network in order for Automate to scan.  Assume by default the customer's networks do not grant such access. Give yourself enough time in advance to make sure your instance can scan a test node.
 
 
 ## High Level Agenda
 1.  Introduction of participants and the discussion of the goals of the workshop.
    * Optional: Depending on the makeup of the group and their knowledge of Chef it may make sense to give a 20-30 minutes whiteboard/discussion of what Chef Automate is and what problems it can solve for the customer
 
-2.  Optional: Basic Configuration Management/Drift Detection use case: Show to to apply basic IIS and/or Linux OS configuration cookbooks against newly created nodes (See *Appendix I* for more info)
+2.  Optional: Basic Configuration Management/Drift Detection use case: Show how to apply basic IIS and/or Linux OS configuration cookbooks against newly created nodes (See *Appendix I* for more info)
 
 3. Instructor presentation of the slide-driven walkthrough of the steps in a Detect & Correct scenario  (put PPT link included in this repo)
 
@@ -60,9 +61,9 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the lovely things it fixes.  
 
-8.  Optional: Execute 'On-site scan-only option'.  See *Appendix III*
- Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
-   * This assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
+8.  Optional: Execute 'On-site scan-only option'.  (See *Appendix III* for more info)
+
+
 
 
 ## Setup
@@ -87,10 +88,23 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 3. Test your environment, test your nodes, test your assumptions
 
 ## Appendix I - Optional configuration management and drift use case
-
+links to cookbooks
+descriptions of what cookbooks do
+suggested steps
 
 ## Appendix II -- recommended/example controls for Detect & Correct 
 
 
 ## Appendix III -- Optional remote scan use case
+*Remember, doing remote scan assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration*
+
+ Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
+
+ If you run this use-case at the end of the workshop the participants will already be very familiar with Detect/Correct and you can wrap up the workshop by saying "now lets looks at the state of a node in your environment vs a CIS hardening standard for the OS".  
+
+Focus on the ease of scanning and gathering data to find the information they need in order to plan on moving forward to making those nodes compliance.  In order to correct they will in the future need to manage those nodes with Chef and apply cookbooks in the exact manner they have today in the workshop.  And then once the chef-client is on the node the Detect phase can be scheduled to be executed at a regular interval so the compliance data is always up to date.
+
+
+
+
 
