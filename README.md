@@ -24,11 +24,10 @@ This workshop has been designed to be hosted in a cloud/BJC environment for the 
 
 As technical professionals it is at your discretion if you want to run this full workshop against on-prem customer nodes at the client site.   
 
-Scanning customer on-prem nodes will add additional planning and time in the form of
+Running full Detect & Correct on customer on-prem nodes will add additional planning and time in the form of
 * Understanding the cloud VPNs and network setups of your hosted Automate session.
 * Customer firewall, proxy settings and VPNs that need to be modified allow communicating to the on-prem nodes on port 8443. 
-
-**If you choose to do this full workshop against customer on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
+* Prep time.    **If you choose to do this full workshop against customer on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
 
 
 ### On-site scan-only option
@@ -53,12 +52,25 @@ If doing something on their own nodes is really important to the customer, and-o
 
 5. Instuctor-led, but full group participation walkthrough of the first Detect-correct scenario
   * Look at appendix section below for suggested controls to fix.   Depending on the needs and composition of your participants you can of course choose any controls or profiles you want
-  * It is very important that you review and test any controls you want to Detect/Correcty before you go onsite.....profiles and base OS configurations change often.  Bugs can be introduced and behavior can change.  Make sure you know what controls you want to run during this workshop, and confirm your assumptions on how the fix functions.
+  * It is very important that you review and test any controls you want to Detect/Correct before you go onsite.....profiles and base OS configurations change often.  Bugs can be introduced and behavior can change.  Make sure you know what controls you want to run during this workshop, and confirm your assumptions on how the fix functions.
 
 6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 15-20 minutes per control) go through the solution as a group
 
 7. Have the participants apply the full DevSec fix cookbook to their node
 
+## Setup
+1.	Spin-up a standard BJC environment.   It is recommended you spin up the instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
 
-## Appendix -- put link to google doc here?
+2.	Create and bootstrap to the Automate instance nodes of the OS you will need.  Multiple OS flavors of nodes can definitely be used in the workshop.
+
+* Create a couple nodes for yourself as admin for shakeout-test
+
+* Create one node per expected participant.  Name each node using the card-suite method we use during Essentials training (1hearts, 1hearts, 1spade, 2spade, etc)
+
+* When you bootstrap the node, bootstrap it with the "dca_config" cookbook included in this repo. This will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  After downloading this repo you can of course modify the compliance profile attributes before you upload it into your Chef server to get the exact behavior you want.
+
+3. Test your environment, test your nodes, test your assumptions
+
+
+## Appendix -- recommended/example controls for Detect & Correct 
 
