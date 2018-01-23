@@ -54,12 +54,12 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 4. Have all participants open Chef Automate on their laptop and assign each their node based on playing card suites
 
 5. Instuctor-led, but full group participation walkthrough of the first Detect-correct scenario
-  * Look at *Appendix II* for examples of controls to fix.   Depending on the needs and composition of your participants you can of course choose any controls or profiles you want
-  * It is very important that you review and test any controls you want to Detect/Correct before you go onsite.....profiles and base OS configurations change often.  Bugs can be introduced and behavior can change.  Make sure you know what controls you want to run during this workshop, and confirm your assumptions on how the fix functions.
+  * Look at *Appendix II* for examples of controls to fix.  Depending on the needs and composition of your participants you can of course choose any controls or profiles you want
 
-6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 15-20 minutes per control) go through the solution as a group
+6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 10-15 minutes per control) go through the solution as a group
 
-7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the lovely things it fixes.  
+7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the things that it fixes.  
+** Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed....its an open source cookbook, sometimes fixes in it fail.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced and be prepared to acknowledge it.
 
 8.  Optional: Execute 'On-site scan-only option'.  (See *Appendix III* for more info)
 
@@ -69,21 +69,24 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 ## Setup
 1.	Spin-up a standard BJC environment.   It is recommended you spin up the instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
 
+2. Upload the "dca_config" cookbook stored in this repo to your Chef Server.
+* This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  
+* Before uploading this repo you can of course make a local copy and modify the attributes to add/remove profiles to get the exact behavior you want.
+
 2.	Create and bootstrap to the Automate instance nodes of the OS you will need.  Multiple OS flavors of nodes can definitely be used in the workshop.
+* When you bootstrap each node, bootstrap with above naming convention and with a runlist that includes the "dca_config" cookbook stored in this repo. 
 
 * Create a couple nodes for yourself as admin for shakeout-test
 
 * Create one node per expected participant (and some extra for the unexpected ones).  Within Chef Automate name each node using the card-suite method we use during Essentials training (1hearts, 1hearts, 1spade, 2spade, etc).    
 
-* When you bootstrap each node, bootstrap with above naming convention and with a runlist that includes the "dca_config" cookbook stored in this repo. This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  After downloading this repo you can of course modify the compliance profile attributes before you upload it into your Chef server to get the exact behavior you want.
 
-4. Upload the desired DevSec hardening cookbook into your ChefServer.
-[DevSec Chef OS (linux) Hardening]
-(https://github.com/dev-sec/chef-os-hardening)
-[DevSec Chef SSH hardening]
-(https://github.com/dev-sec/chef-ssh-hardening)
-[DevSec Chef Windows Hardening]
-(https://github.com/dev-sec/chef-windows-hardening)
+4. Upload the desired DevSec hardening cookbook into your Chef Server.
+https://github.com/dev-sec/chef-os-hardening
+
+https://github.com/dev-sec/chef-ssh-hardening
+
+https://github.com/dev-sec/chef-windows-hardening
 
 3. Test your environment, test your nodes, test your assumptions
 
@@ -93,6 +96,8 @@ descriptions of what cookbooks do
 suggested steps
 
 ## Appendix II -- recommended/example controls for Detect & Correct 
+*It is very important that you review and test any controls you want to Detect/Correct before you go onsite.....profiles and base OS configurations change often.  Bugs can be introduced and behavior can change.  Make sure you know what controls you want to run during this workshop, and confirm your assumptions on how the fix functions.*
+
 
 
 ## Appendix III -- Optional remote scan use case
