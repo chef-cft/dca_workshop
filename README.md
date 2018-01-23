@@ -43,20 +43,22 @@ If doing something on their own nodes is really important to the customer, and-o
 1.  Introduction of participants and the discussion of the goals of the workshop.
    * Optional: Depending on the makeup of the group and their knowledge of Chef it may make sense to give a 20-30 minutes whiteboard/discussion of what Chef Automate is and what problems it can solve for the customer
 
-2.  Optional: Execute 'On-site scan-only option'.  Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance you will be using for the rest of the workshop.  
-   * This assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
+2.  Optional: Basic Configuration Management/Drift Detection use case: Show to to apply basic IIS and/or Linux OS configuration cookbooks against newly created nodes (See *Appendix I* for more info)
 
 3. Instructor presentation of the slide-driven walkthrough of the steps in a Detect & Correct scenario  (put PPT link included in this repo)
 
 4. Have all participants open Chef Automate on their laptop and assign each their node based on playing card suites
 
 5. Instuctor-led, but full group participation walkthrough of the first Detect-correct scenario
-  * Look at appendix section below for suggested controls to fix.   Depending on the needs and composition of your participants you can of course choose any controls or profiles you want
+  * Look at *Appendix II* for examples of controls to fix.   Depending on the needs and composition of your participants you can of course choose any controls or profiles you want
   * It is very important that you review and test any controls you want to Detect/Correct before you go onsite.....profiles and base OS configurations change often.  Bugs can be introduced and behavior can change.  Make sure you know what controls you want to run during this workshop, and confirm your assumptions on how the fix functions.
 
 6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 15-20 minutes per control) go through the solution as a group
 
 7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the lovely things it fixes.  
+
+8.  Optional: Execute 'On-site scan-only option'.  Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
+   * This assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
 
 
 ## Setup
