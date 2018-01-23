@@ -1,7 +1,7 @@
 # SA instructions and links for setting up the 2-3 hour DCA workshop
 
-### In Progress Jan 2017
-### maintainer: Karen Kwentus
+#### In Progress Jan 2017
+#### maintainer: Karen Kwentus
 
 ## Goal for this workshop
 A contained, highly-repeatable method to give our customers hands-on experience and education about the benefits of using Chef Automate while removing the overhead and time commitment of a week-long POC.   Best-case scenario, this content pre-empts the need for a future POC at all.   This is designed to be a 'workshop in a box' where we can show up, impress, and leave....with the potential for an individual SE to support multiple of these a week.   
@@ -24,7 +24,7 @@ Scanning customer on-prem nodes will add additional planning and time in the for
 
 
 ### On-site scan-only option
-If doing something in their own nodes is really important to the customer, and-or it would pre-empt a future POC, then consider offering a remote-scan scan step as part of the workshop
+If doing something on their own nodes is really important to the customer, and-or it would preempt a future POC, then consider offering a remote-scan scan step as part of the workshop
 * Benefits of just an on-site scan:
     - Don't need to install the chef-client on the node
     - Won't be doing any sort of modification of any customer node
@@ -36,8 +36,8 @@ If doing something in their own nodes is really important to the customer, and-o
 1.  Introduction of participants and the discussion of the goals of the workshop
     Optional: Depending on the makeup of the group and their knowledge of Chef it may make sense to give a 20-30 minutes whiteboard/discussion of what Chef Automate is and what problems it can solve for the customer
 
-2.  Optional: Using Chef Automate remote-scan capability, aka no chef-client, remote-scan one or multiple customer nodes against a standard CIS profile.  
-··* This assumes confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
+2.  Optional: Execute 'On-site scan-only option'.  Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance you will be using for the rest of the workshop.  
+* This assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
 
 3. Instructor presentation of the slide-driven walkthrough of the steps in a Detect & Correct scenario  (put PPT link included in this repo)
 
