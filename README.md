@@ -1,7 +1,7 @@
-# Instructions and links for setting up the 2-3 hour DCA workshop
+# SA instructions and links for setting up the 2-3 hour DCA workshop
 
-## In Progress Jan 2017
-## maintainer: Karen Kwentus
+### In Progress Jan 2017
+### maintainer: Karen Kwentus
 
 ## Goal for this workshop
 A contained, highly-repeatable method to give our customers hands-on experience and education about the benefits of using Chef Automate while removing the overhead and time commitment of a week-long POC.   Best-case scenario, this content pre-empts the need for a future POC at all.   This is designed to be a 'workshop in a box' where we can show up, impress, and leave....with the potential for an individual SE to support multiple of these a week.   
@@ -9,6 +9,7 @@ A contained, highly-repeatable method to give our customers hands-on experience 
 
 ## Audience
 Practioners or managers who influence the purchase of Chef Automate
+ 
 
 ## Using Chef Automate in the cloud
 This workshop has been designed to be hosted in a cloud/BJC environment for the bot the Chef Automate environment and the managed nodes to be scanned/repaired.  There isn't anything required about BJC persay, you can use a blank AWS/Azure marketplace image as well, just more setup on your part.
@@ -21,6 +22,7 @@ Scanning customer on-prem nodes will add additional planning and time in the for
 
 **If you choose to do this against on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
 
+
 ### On-site scan-only option
 If doing something in their own nodes is really important to the customer, and-or it would pre-empt a future POC, then consider offering a remote-scan scan step as part of the workshop
 ··* Benefits of just an on-site scan:
@@ -28,6 +30,7 @@ If doing something in their own nodes is really important to the customer, and-o
     - Won't be doing any sort of modification of any customer node
 ··* Cons of doing the on-site scan:
     - You are getting yourself back into the customer firewall-proxy access do-se-do.  Even with SSH or RDP access the Chef Automate instance is very likely still going to need to be able to go through the customer's firewal or proxy setups.   Give yourself enough time in advance to make sure your instance can connect.
+
 
 ## High Level Agenda
 1.  Introduction of participants and the discussion of the goals of the workshop
