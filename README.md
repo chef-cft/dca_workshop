@@ -59,7 +59,7 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 10-15 minutes per control) go through the solution as a group
 
 7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the things that it fixes.  
-** Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed....its an open source cookbook, sometimes fixes in it fail.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced and be prepared to acknowledge it.
+**Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed**  Its an open source cookbook, sometimes controls comeback still failling.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced in the open source cookbook and be prepared to acknowledge it.
 
 8.  Optional: Execute 'On-site scan-only option'.  (See *Appendix III* for more info)
 
@@ -82,11 +82,11 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 
 4. Upload the desired DevSec hardening cookbook into your Chef Server.
-https://github.com/dev-sec/chef-os-hardening
+* https://github.com/dev-sec/chef-os-hardening
 
-https://github.com/dev-sec/chef-ssh-hardening
+* https://github.com/dev-sec/chef-ssh-hardening
 
-https://github.com/dev-sec/chef-windows-hardening
+* https://github.com/dev-sec/chef-windows-hardening
 
 3. Test your environment, test your nodes, test your assumptions
 
