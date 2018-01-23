@@ -11,30 +11,30 @@ A contained, highly-repeatable method to give our customers hands-on experience 
 Practioners or managers who influence the purchase of Chef Automate
  
 
-## Using Chef Automate in the cloud
-This workshop has been designed to be hosted in a cloud/BJC environment for the bot the Chef Automate environment and the managed nodes to be scanned/repaired.  There isn't anything required about BJC persay, you can use a blank AWS/Azure marketplace image as well, just more setup on your part.
+## Workshop in the cloud
+This workshop has been designed to be hosted in a cloud/BJC environment for the both Chef Automate and the managed nodes to be scanned/repaired.  There isn't anything required about BJC persay, you can use a blank AWS/Azure marketplace image as well, just more setup on your part.
 
 As technical professionals it is at your discretion if you want to run this full workshop against on-prem customer nodes at the client site.   
 
-Scanning customer on-prem nodes will add additional planning and time in the form of:
-•	Understanding the cloud VPNs and network setups of your hosted Automate session.
-•	Customer firewall, proxy settings and VPNs that need to be modified allow communicating to the on-prem nodes on port 8443. 
+Scanning customer on-prem nodes will add additional planning and time in the form of
+*Understanding the cloud VPNs and network setups of your hosted Automate session.
+*Customer firewall, proxy settings and VPNs that need to be modified allow communicating to the on-prem nodes on port 8443. 
 
 **If you choose to do this against on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
 
 
 ### On-site scan-only option
 If doing something in their own nodes is really important to the customer, and-or it would pre-empt a future POC, then consider offering a remote-scan scan step as part of the workshop
-··* Benefits of just an on-site scan:
+* Benefits of just an on-site scan:
     - Don't need to install the chef-client on the node
     - Won't be doing any sort of modification of any customer node
-··* Cons of doing the on-site scan:
+* Cons of doing the on-site scan:
     - You are getting yourself back into the customer firewall-proxy access do-se-do.  Even with SSH or RDP access the Chef Automate instance is very likely still going to need to be able to go through the customer's firewal or proxy setups.   Give yourself enough time in advance to make sure your instance can connect.
 
 
 ## High Level Agenda
 1.  Introduction of participants and the discussion of the goals of the workshop
-···Optional: Depending on the makeup of the group and their knowledge of Chef it may make sense to give a 20-30 minutes whiteboard/discussion of what Chef Automate is and what problems it can solve for the customer
+    Optional: Depending on the makeup of the group and their knowledge of Chef it may make sense to give a 20-30 minutes whiteboard/discussion of what Chef Automate is and what problems it can solve for the customer
 
 2.  Optional: Using Chef Automate remote-scan capability, aka no chef-client, remote-scan one or multiple customer nodes against a standard CIS profile.  
 ··* This assumes confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
