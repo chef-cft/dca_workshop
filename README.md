@@ -11,7 +11,10 @@ A contained, highly-repeatable method to give our customers hands-on experience 
 Practioners or managers who influence the purchase of Chef Automate
 
 ## Logistics 
-Workshop content is around 2-3 hours.   The workshop is recommended to be held at a customer site with participants using their own laptops.   Overhead projector and whiteboard in room are also recommended.    Consider providing breakfast or lunch based on timing of meeting.   Any number of participants can work through this workshop, but with over 10 participants consider adding another SA to assist.
+* Workshop content without all the "optionals" is around 2-3 hours.   If you do the optional CM and remote-scan use cases then you will want to schedule closer to 4 hours.  The workshop is recommended to be held at a customer site with participants using their own laptops.   
+* Overhead projector and whiteboard in room are also recommended.    
+* Consider providing breakfast or lunch based on timing of meeting.   
+* Any number of participants can work through this workshop, but with over 10 participants consider adding another SA to assist.
 
  
 ## Assumptions
@@ -31,7 +34,7 @@ Running full Detect & Correct on customer on-prem nodes will add additional plan
 
 
 ### On-site scan-only option
-If doing something on their own nodes is really important to the customer, and-or it would preempt a future POC, then consider offering a remote-scan scan step as part of the workshop
+If seeing a scan on their own nodes is really important to the customer, and-or it would preempt a future POC, then consider offering a remote-scan scan step as part of the workshop
 * Benefits of just an on-site scan:
     - Don't need to install the chef-client on the node
     - Won't be doing any sort of modification of any customer node
@@ -57,7 +60,8 @@ If doing something on their own nodes is really important to the customer, and-o
 
 7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the lovely things it fixes.  
 
-8.  Optional: Execute 'On-site scan-only option'.  Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
+8.  Optional: Execute 'On-site scan-only option'.  See *Appendix III*
+ Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
    * This assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration  
 
 
@@ -72,14 +76,21 @@ If doing something on their own nodes is really important to the customer, and-o
 
 * When you bootstrap each node, bootstrap with above naming convention and with a runlist that includes the "dca_config" cookbook stored in this repo. This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  After downloading this repo you can of course modify the compliance profile attributes before you upload it into your Chef server to get the exact behavior you want.
 
-4. Upload the desired DevSec hardening cookbook into your ChefServer
-https://github.com/dev-sec?utf8=%E2%9C%93&q=chef&type=&language=
-https://github.com/dev-sec/chef-os-hardening
-https://github.com/dev-sec/chef-ssh-hardening
-https://github.com/dev-sec/chef-windows-hardening
+4. Upload the desired DevSec hardening cookbook into your ChefServer.
+[DevSec Chef OS (linux) Hardening]
+(https://github.com/dev-sec/chef-os-hardening)
+[DevSec Chef SSH hardening]
+(https://github.com/dev-sec/chef-ssh-hardening)
+[DevSec Chef Windows Hardening]
+(https://github.com/dev-sec/chef-windows-hardening)
 
 3. Test your environment, test your nodes, test your assumptions
 
+## Appendix I - Optional configuration management and drift use case
 
-## Appendix -- recommended/example controls for Detect & Correct 
+
+## Appendix II -- recommended/example controls for Detect & Correct 
+
+
+## Appendix III -- Optional remote scan use case
 
