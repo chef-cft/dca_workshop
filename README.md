@@ -60,7 +60,6 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and then go back into Compliance to see all the updated/fixed controls.
 
-**Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed**  This is an open source cookbook, sometimes controls comeback still failling.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced and be prepared to acknowledge it.
 
 8.  Optional: Execute 'On-site scan-only option'.  (See *Appendix III* for more info)
 
@@ -80,13 +79,15 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 
 4. Upload the desired DevSec hardening cookbook into your Chef Server.
+**Test the DevSec hardening cookbook after loading to see if it fixes all controls on a testing node, or if there are bugs and controls left unfixed**  These are open source cookbooks, sometimes controls comeback still failling.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and let the rest of the team know).  Else at least understand a bug has been introduced and be prepared to acknowledge it.
+
 * https://github.com/dev-sec/chef-os-hardening
 
 * https://github.com/dev-sec/chef-ssh-hardening
 
 * https://github.com/dev-sec/chef-windows-hardening
 
-5. Test the entire scenario on one of your testing nodes
+5. Test the entire scenario
 
 ## Appendix I - Optional configuration management and drift use case
 links to cookbooks
