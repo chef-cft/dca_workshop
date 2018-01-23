@@ -17,10 +17,10 @@ This workshop has been designed to be hosted in a cloud/BJC environment for the 
 As technical professionals it is at your discretion if you want to run this full workshop against on-prem customer nodes at the client site.   
 
 Scanning customer on-prem nodes will add additional planning and time in the form of
-*Understanding the cloud VPNs and network setups of your hosted Automate session.
-*Customer firewall, proxy settings and VPNs that need to be modified allow communicating to the on-prem nodes on port 8443. 
+* Understanding the cloud VPNs and network setups of your hosted Automate session.
+* Customer firewall, proxy settings and VPNs that need to be modified allow communicating to the on-prem nodes on port 8443. 
 
-**If you choose to do this against on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
+**If you choose to do this full workshop against customer on-prem nodes it is highly recommended that you ensure that the customer’s on-prem nodes can be managed and scanned by your Automate instance once week before the workshop.**
 
 
 ### On-site scan-only option
