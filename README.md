@@ -16,7 +16,7 @@ Workshop content is around 2-3 hours.   The workshop is recommended to be held a
  
 ## Assumptions
 * Workflow is not addressed in this workshop
-* Bootstrapping is not addressed in this workshop, we are looking at it from a scenario where users can log into Automate and already see what is being managed/scanned.  If its important for your customer to see bootstrapping, you of course come with the nodes running but not yet bootstrapped and have your participants execute a knife command
+* How-to-bootstrap is not addressed in this workshop as we are looking at it from a scenario where users can log into Automate and already see what is being managed/scanned.  If its important for your customer to see bootstrapping, you of course come with the nodes running but not yet bootstrapped and have your participants execute a knife command
 
 
 ### Workshop in the cloud
@@ -56,7 +56,8 @@ If doing something on their own nodes is really important to the customer, and-o
 
 6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 15-20 minutes per control) go through the solution as a group
 
-7. Have the participants apply the full DevSec fix cookbook to their node
+7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the lovely things it fixes.  
+
 
 ## Setup
 1.	Spin-up a standard BJC environment.   It is recommended you spin up the instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
@@ -65,9 +66,15 @@ If doing something on their own nodes is really important to the customer, and-o
 
 * Create a couple nodes for yourself as admin for shakeout-test
 
-* Create one node per expected participant.  Name each node using the card-suite method we use during Essentials training (1hearts, 1hearts, 1spade, 2spade, etc)
+* Create one node per expected participant (and some extra for the unexpected ones).  Within Chef Automate name each node using the card-suite method we use during Essentials training (1hearts, 1hearts, 1spade, 2spade, etc).    
 
-* When you bootstrap the node, bootstrap it with the "dca_config" cookbook included in this repo. This will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  After downloading this repo you can of course modify the compliance profile attributes before you upload it into your Chef server to get the exact behavior you want.
+* When you bootstrap each node, bootstrap with above naming convention and with a runlist that includes the "dca_config" cookbook stored in this repo. This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  After downloading this repo you can of course modify the compliance profile attributes before you upload it into your Chef server to get the exact behavior you want.
+
+4. Upload the desired DevSec hardening cookbook into your ChefServer
+https://github.com/dev-sec?utf8=%E2%9C%93&q=chef&type=&language=
+https://github.com/dev-sec/chef-os-hardening
+https://github.com/dev-sec/chef-ssh-hardening
+https://github.com/dev-sec/chef-windows-hardening
 
 3. Test your environment, test your nodes, test your assumptions
 
