@@ -58,8 +58,9 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 6. Assign additional control(s) (depending on time) for all participants to 'Detect and Correct'.  Work the room helping individuals as needed.  At the end of the allotted time (suggestion: 10-15 minutes per control) go through the solution as a group
 
-7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and watch all the things that it fixes.  
-**Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed**  Its an open source cookbook, sometimes controls comeback still failling.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced in the open source cookbook and be prepared to acknowledge it.
+7. Have the participants apply a full DevSec hardening cookbook to their node, aka add it to their runlist, and then go back into Compliance to see all the updated/fixed controls.
+
+**Test the DevSec hardening cookbook in advance to see if it fixes all controls or if there are bugs and controls left unfixed**  This is an open source cookbook, sometimes controls comeback still failling.  If controls are unfixed you can either make a local copy and update the cookbook itself if possible (and maybe even submit the fix back to DevSec as a pull request).  Else at least understand a bug has been introduced and be prepared to acknowledge it.
 
 8.  Optional: Execute 'On-site scan-only option'.  (See *Appendix III* for more info)
 
@@ -67,18 +68,15 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 
 ## Setup
-1.	Spin-up a standard BJC environment.   It is recommended you spin up the instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
+1.	Spin-up a standard BJC environment or AWS/Azure marketplace environment.  It is recommended you spin up a BJC instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
 
 2. Upload the "dca_config" cookbook stored in this repo to your Chef Server.
 * This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  
 * Before uploading this repo you can of course make a local copy and modify the attributes to add/remove profiles to get the exact behavior you want.
 
-2.	Create and bootstrap to the Automate instance nodes of the OS you will need.  Multiple OS flavors of nodes can definitely be used in the workshop.
-* When you bootstrap each node, bootstrap with above naming convention and with a runlist that includes the "dca_config" cookbook stored in this repo. 
-
-* Create a couple nodes for yourself as admin for shakeout-test
-
-* Create one node per expected participant (and some extra for the unexpected ones).  Within Chef Automate name each node using the card-suite method we use during Essentials training (1hearts, 1hearts, 1spade, 2spade, etc).    
+3.	Create and bootstrap all the nodes you will need.  Multiple OS flavors of nodes can definitely be used in the workshop. Create a couple nodes for yourself as admin for shakeout-test. Create one node per OS per expected participant (and some extras for the unexpected ones).  
+* When bootstrapping, name each node using the card-suite method (1ofhearts, 2ofhearts, 1ofspades, 2ofspades, etc).    
+* Bootstrap with a runlist that includes the "dca_config" cookbook
 
 
 4. Upload the desired DevSec hardening cookbook into your Chef Server.
@@ -88,7 +86,7 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 
 * https://github.com/dev-sec/chef-windows-hardening
 
-3. Test your environment, test your nodes, test your assumptions
+5. Test the entire scenario on one of your testing nodes
 
 ## Appendix I - Optional configuration management and drift use case
 links to cookbooks
