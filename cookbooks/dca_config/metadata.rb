@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures dca_config'
 long_description 'Installs/Configures dca_config'
-version '0.1.0'
+version '1.0.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 # The `issues_url` points to the location where issues for this cookbook are
@@ -18,3 +18,7 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/dca_config'
+
+depends 'chef-client', '~> 9.0.4'
+depends 'audit' , '~> 6.0.1'
+

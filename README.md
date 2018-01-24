@@ -70,6 +70,7 @@ If seeing a scan on their own nodes is really important to the customer, and-or 
 1.	Spin-up a standard BJC environment or AWS/Azure marketplace environment.  It is recommended you spin up a BJC instance at least 1 full day before the workshop is scheduled for shakeout and configuration activities.   When you spin up the instance make sure and extend the hours lifetime of the instance to be up past the estimated time of completion for the workshop.
 
 2. Upload the "dca_config" cookbook stored in this repo to your Chef Server.
+* https://github.com/chef-cft/dca_workshop/tree/master/cookbooks/dca_config
 * This cookbook will both set the chef-client to checkin at regular instances, and will also set default compliance profiles for the nodes to scan based on OS.  
 * Before uploading this repo you can of course make a local copy and modify the attributes to add/remove profiles to get the exact behavior you want.
 
@@ -100,7 +101,7 @@ suggested steps
 
 
 ## Appendix III -- Optional remote scan use case
-*Remember, doing remote scan assumes previous testing/confirmation of network access for the BJC automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration*
+*Remember, doing remote scan assumes previous testing/confirmation of network access for the Automate instance to be able to RDP or SSH into customer nodes with firewall and/or proxy rule configuration*
 
  Execute a remote-scan of one or multiple customer nodes against a standard CIS profile using the same Automate instance used for the rest of the workshop.  
 
