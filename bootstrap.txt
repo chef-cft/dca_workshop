@@ -1,0 +1,3 @@
+## knife bootstrap <IPADDRESS> --sudo -x <PRIVLEDGEDUSER> -i <NODEPRIVUSER.PEM> --node-ssl-verify-mode none -N <NODENAME> -r <RUNLIST>
+
+knife bootstrap IP --sudo -x centos -i .pem --node-ssl-verify-mode none -N linuxNode -r 'role[linuxscan]'
