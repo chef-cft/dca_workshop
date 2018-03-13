@@ -1,10 +1,10 @@
 {
-  "name": "comp_scan_centos",
-  "description": "set & test compliance profile",
+  "name": "linuxscan",
+  "description": "set & test compliance profile for linux nodes",
   "json_class": "Chef::Role",
   "default_attributes": {
     "chef_client": {
-      "interval": 300,
+      "interval": 120,
       "splay": 60
     }
   },
