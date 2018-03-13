@@ -1,0 +1,31 @@
+{
+  "name": "comp_scan_centos",
+  "description": "set & test compliance profile",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "chef_client": {
+      "interval": 300,
+      "splay": 60
+    }
+  },
+  "override_attributes": {
+    "audit": {
+      "reporter": "chef-server-automate",
+      "fetcher": "chef-server-automate",
+      "insecure": false,
+      "profiles": [
+        {
+          "name": "windows-baseline",
+          "compliance": "workstation-1/windows-baseline"
+        }
+      ]
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[chef-client::default]",
+    "recipe[audit]"
+  ],
+  "env_run_lists": {
+
+  }
