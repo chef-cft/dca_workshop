@@ -4,8 +4,11 @@
   "json_class": "Chef::Role",
   "default_attributes": {
     "chef_client": {
-      "interval": 120,
-      "splay": 60
+      "task": {
+        "frequency": "minute",
+        "interval": 5,
+        "frequency_modifier": 3
+      }
     }
   },
   "override_attributes": {
@@ -16,7 +19,7 @@
       "profiles": [
         {
           "name": "windows-baseline",
-          "compliance": "workstation-1/windows-baseline"
+          "compliance": "chefadmin/windows-baseline"
         }
       ]
     }
@@ -24,6 +27,7 @@
   "chef_type": "role",
   "run_list": [
     "recipe[chef-client::default]",
+    "recipe[chef-client::task]",
     "recipe[audit]"
   ],
   "env_run_lists": {

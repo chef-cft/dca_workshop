@@ -16,7 +16,7 @@
       "profiles": [
         {
           "name": "linux-baseline",
-          "compliance": "workstation-1/linux-baseline"
+          "compliance": "chefadmin/linux-baseline"
         }
       ]
     }
